@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Labkom99.com - Membuat Menu Navigasi Responsive HTML5</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+        <link rel="stylesheet" type="text/css" href="css/labkom99.css">
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">	
+			<header>
+                <h1>Membuat Menu Navigasi Responsive HTML5</h1>
+                <p>Selamat Datang Di Labkom99.com</p>
+                <p><a href="https://www.labkom99.com/search/label/HTML">Home</a> | <a href="https://www.labkom99.com/2020/11/membuat-menu-navigasi-responsive-html5.html">Menu Navigasi</a></p>
+			</header>
+			<div class="main clearfix">
+				<nav id="menu" class="nav">					
+					<ul>
+						<li>
+							<a href='http://www.labkom99.com' target='_blank' >
+								<span class="icon">
+									<i aria-hidden="true" class="icon-home"></i>
+								</span>
+								<span>Home</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.labkom99.com/p/jasa-it.html" target="_blank">
+								<span class="icon"> 
+									<i aria-hidden="true" class="icon-services"></i>
+								</span>
+								<span>Services</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.labkom99.com/p/about.html" target="_blank">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-portfolio"></i>
+								</span>
+								<span>Portfolio</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.labkom99.com/search/label/" target="_blank">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-blog"></i>
+								</span>
+								<span>Blog</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.labkom99.com/p/jasa-it.html" target="_blank">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-team"></i>
+								</span>
+								<span>The team</span>
+							</a>
+						</li>
+						<li>
+							<a href='https://www.labkom99.com/p/contact.html' target="_blank">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-contact"></i>
+								</span>
+								<span>Contact</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+            <div class="related">
+		    <h3> Membuat Efek Animasi Dengan HTML Dan Css:</h3>
+            <a href="https://www.labkom99.com/2020/08/membuat-efek-gelombang-pada-teks.html" target="_blank" >
+			  <img src="related/Membuat Efek Gelombang Pada Teks Menggunakan Clip-Path HTML Dan CSS3.jpg" width="300" alt="Membuat Efek Gelombang Pada Teks Menggunakan Clip-Path HTML Dan CSS3"/>
+			  <h3>Membuat Efek Gelombang Pada Teks Menggunakan Clip-Path HTML Dan CSS3</h3>
+			</a>
+		    <a href="https://www.labkom99.com/2020/09/membuat-animasi-teks-dengan-html5-dan.html" target="_blank" >
+			  <img src="related/Membuat Animasi Teks Dengan HTML5 Dan Canvas.jpg" width="300" alt="Membuat Animasi Teks Dengan HTML5 Dan Canvas"/>
+			  <h3>Membuat Animasi Teks Dengan HTML5 Dan Canvas</h3>
+			</a>
+			<a href="https://www.labkom99.com/2020/08/membuat-efek-animasi-lampu-neon-pada.html" target="_blank">
+			  <img src="related/Membuat Efek Animasi Lampu Neon Pada Tesk Dengan HTML Dan CSS3.jpg" width="300" alt="Membuat Efek Animasi Lampu Neon Pada Tesk Dengan HTML Dan CSS3"/>
+			  <h3>Membuat Efek Animasi Lampu Neon Pada Tesk Dengan HTML Dan CSS3</h3>
+			</a>
+		</div>
+		</div><!-- /container -->
+		<script>
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+			    }
+			    else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+			    }
+			    return r.className;
+			};	
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+		</script>
+	</body>
+</html>
